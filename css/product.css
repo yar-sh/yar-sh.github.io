@@ -202,6 +202,7 @@ p#names, section#names
 	padding:0;
 	background-color:transparent;
 }
+
 .footer
 {
 	background-image: url('../img/common/Logo.png');
@@ -209,23 +210,13 @@ p#names, section#names
 	text-align: left;
 	display: table-row;
   	height: 1px;
-}
-.footer p
-{
-	top: 50%; 
-	transform: translateY(50%);
-	float:left;
+  	padding-top:10px;
+  	padding-bottom:10px;
 }
 
-.twitter
+.footer p
 {
-	margin-top: 1%;
-	margin-bottom: 1%;
-	margin-left: 3%;
-	margin-right: 3%;
-	width:48px;
-	height: 48px;
-	float:left;
+	margin-left:8%;
 }
 
 #toTop
