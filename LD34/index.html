@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>YOL Productions - LD34</title>
+
+<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico"/> 
+<link rel="stylesheet" href="../css/w3.css">
+<link rel="stylesheet" href="../css/product.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+  function openMenuTab(evt, tabName) 
+  {
+   var i, x, tablinks;
+   x = document.getElementsByClassName("mainMenu");
+   tablinks = document.getElementsByClassName("tablink");
+   for (i = 0; i < x.length; i++) 
+   {
+     tablinks[i].classList.remove("w3-border-green");
+     tablinks[i].classList.remove("w3-light-green");
+   }
+   evt.currentTarget.firstElementChild.classList.add("w3-border-green");
+   evt.currentTarget.firstElementChild.classList.add("w3-light-green");
+  }
+
+  function resizeMenuBG() 
+  { 
+   document.getElementById("menuBG").setAttribute("style", "height:" +  $( "#menu" ).height()+ "px; background-color: rgb(150,170,150);");
+  }
+
+  function playGame()
+  {
+  	var gameArea = document.getElementById("embedPlay");
+  	var waitGame = document.getElementById("waitPlay");
+  	gameArea.innerHTML = "<iframe id='embed' src='http://uploads.ungrounded.net/alternate/929000/929794_alternate_27757_r3.zip/?NewgroundsAPI_PublisherID=1&amp;NewgroundsAPI_SandboxID=566f0dbfa47af&amp;NewgroundsAPI_SessionID=iACANl9Kns6rKxdZa6EH5ed0f2cbc53e4a94e3dd3355556498f17e92c391RKvX&amp;NewgroundsAPI_UserName=HaselLoyance&amp;NewgroundsAPI_UserID=5631392&amp;ng_username=HaselLoyance' width='820' height='620' style='border: white solid 2px;'></iframe><br><img src='../img/common/powerBtn.png' width='10%' style='border: black solid 5px; border-radius:5px; padding:10px;margin-top:10px; margin-bottom:10px; cursor: hand; cursor: pointer;' onclick='stopGame()'>";
+  	waitGame.setAttribute("style", "display:none;");
+  }
+
+  function stopGame()
+  {
+   var gameArea = document.getElementById("embedPlay");
+   var waitGame = document.getElementById("waitPlay");
+   gameArea.innerHTML = "";
+   waitGame.setAttribute("style", "display:block;");
+  }
+ 
+  var interval = setInterval(resizeMenuBG, 100);
+  $(window).scroll(function() 
+  {
+   var height = $(window).scrollTop();
+   var element = document.getElementById("menu");
+   if(height  > $( "#menu" ).height()) 
+   {
+    element.classList.add("w3-opacity");
+   }
+   else
+   {
+    element.classList.remove("w3-opacity");
+   }
+  });
+
+  $(function() 
+  {
+   $('a[href*="#"]:not([href="#"])').click(function() 
+   {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) 
+    {
+     var target = $(this.hash);
+     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+     if (target.length) 
+     {
+      $('html, body').animate(
+      {
+       scrollTop: target.offset().top-$( "#menu" ).height()
+      }, 300);
+       return false;
+     }
+    }
+   });
+  });
+
+  window.onload = function() 
+  { 
+   var toTop = document.getElementById('toTop'); 
+   window.onscroll = function () 
+   { 
+    if ( window.pageYOffset > 120 ) 
+    {
+     toTop.style.display = 'block'; 
+    } 
+    else 
+    {
+     toTop.style.display = 'none';
+    }
+   };
+  };
+ </script>
+</head>
+<body class="w3-myfont">
+
+<div id="wrap">
+
+ <div style="height: 43px" id="menuBG" ></div>
+
+ <div class="w3-row w3-animate-top w3-light-grey w3-center" id="menu" style="transition: 0.5s">
+
+  <a href="../" style="font-size: 20px; text-decoration: none;" class="header">
+   <div class="w3-rest w3-hover-light-green w3-center w3-padding">Main page</div>
+   <hr style="padding: 0px; margin: 0px; height: 5px; border-color: rgb(204,204,204); background-color: rgb(204,204,204);">
+  </a>
+
+  <a href="#info" onclick="openMenuTab(event, 'info');">
+   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Information</div>
+  </a>
+
+  <a href="#screens" onclick="openMenuTab(event, 'screens');">
+   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Gallery</div>
+  </a>
+
+  <a href="#play" onclick="openMenuTab(event, 'play');">
+   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Play</div>
+  </a>
+
+  <a href="#down" onclick="openMenuTab(event, 'down');">
+   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Download</div>
+  </a>
+
+ </div>
+
+ <div class="titleDiv w3-container" id="logo">
+  <div class="w3-container w3-leftbar w3-border-green">
+   <p style="font-size: 50px;" class="header">YOL PRODUCTIONS</p>
+   <p style="font-size: 20px;">Make your life easier</p>
+  </div>
+ </div>
+
+
+
+ <div id="content">
+  <div id="info" class="mainMenu">
+   <div style="width: 50%; margin-left: auto; margin-right: auto; text-align: center;">
+    <br>
+    <img src="logo.png" width="75%" style=" border-radius: 5px;">
+    <br>
+    <br>
+   </div>
+  </div>
+ </div>
+
+ <div class="onGreen" style="padding-top: 25px;">
+  <center>
+   <p id="names">
+    technical name: <font class="header important">LD34</font><br>
+    real name: <font class="header important">Save The Plant</font><br>
+   </p>
+  </center>
+ </div>
+
+ <div id="content">
+  <div class="w3-container">
+   <br>
+   <p>
+    In the future, where people live on a huge space station, humanity was left with only one living plant. One day, a scientist (probably not the smartest) placed that plant into the laboratory equipment incinerator. The plant was chopped down into pieces, packed in bags and shot out into space. With the help of advanced technologies, scientists can restore the plant, so the rescue squad was sent. You are the one of the members of the rescuing squad and your goal is to Save The Plant! <br>
+    <hr>
+    Theme: Only two buttons and Grow<br>
+    Features: <br>
+    -Interactive gameplay with only TWO(!) buttons. <br>
+    -Merging of 2D space shooter with TAMAGOTCHI. <br>
+    -Collect Plant's Plant and restore the last living plant. <br><br>
+    Also in the set: <br>
+    -7 power ups. <br>
+    -Bunch of enemies. <br>
+    -10 gun types. <br>
+    -1 boss. <br>
+    -Even more enemies. <br>
+    -Different sounds for better gameplay. <br>
+    -Randomly generated asteroids, of which you need to avoid. <br>
+    -Oh, did I mention that there is WHOLE LOT of enemies? <br>
+    -and rare Pepe, as well as hidden YOBA. <br>
+    <hr>
+    Controls: <br>
+    Left arrow - left; <br>
+    Right arrow - right; <br>
+    Simple, ain't it? <br>
+    <hr>
+    CHEATS: <br>
+    If you think, that there is TOO MUCH enemies, than you might want to press 'P'. <br>
+    This will warp you to the final boss and you'll be maxed out on upgrades. <br>
+   </p>
+  </div>
+ </div>
+
+ <div id="screens" class="onGreen mainMenu">
+  <br>
+  <section class="important header" id="names" style="margin-top: 20px;">Screenshots</section>
+  <p>
+   <div class="w3-content w3-display-container" style="max-width:50%; margin-top: 25px;">
+    <img class="mySlides w3-animate-left" src="logo.png" style="width:100%;">
+    <img class="mySlides w3-animate-left" src="pic1.png" style="width:100%;">
+    <img class="mySlides w3-animate-left" src="pic2.png" style="width:100%;">
+    <div class="w3-center w3-padding w3-large w3-text-white w3-display-bottomleft w3-black" style="width:100%">
+     <div class="w3-left w3-padding-left w3-hover-text-light-green" onclick="plusDivs(-1)">❮</div>
+     <div class="w3-right w3-padding-right w3-hover-text-light-green" onclick="plusDivs(1)">❯</div>
+     <span class="w3-badge demo w3-border w3-hover-light-green" onclick="currentDiv(1)"></span>
+     <span class="w3-badge demo w3-border w3-hover-light-green" onclick="currentDiv(2)"></span>
+     <span class="w3-badge demo w3-border w3-hover-light-green" onclick="currentDiv(3)"></span>
+    </div>
+   </div>
+   <br>
+  </p>
+ </div>
+
+ <div class="w3-container mainMenu">
+  <p class="important header" id="names" style="margin-top: 40px;">Online version</p>
+  <hr style="margin-bottom: 10px;">
+  <center>
+   <div id="play">
+    <div id="playBoard">
+    <div id="waitPlay" onclick="playGame();" style="display: block;"><img src="../img/common/wait.png" width="70%" style="margin-bottom: 20px;"></div>
+    <div id="embedPlay"></div>
+   </div>
+   </div>
+  </center>
+ </div>
+
+ <div id="down" class="onGreen mainMenu">
+  <center>
+   <section class="important header" id="names" style="margin-top: 20px; margin-bottom: 25px;"> Download </section>
+   <p>
+    <div class="w3-btn w3-hover-green"><a href="https://www.dropbox.com/s/n0caepfg936v9wl/Save%20the%20Plant.zip" target="_blank" style="text-decoration: none; color:inherit;">For Windows</a></div><br><br>
+    <div class="w3-btn w3-hover-green"><a href="https://www.dropbox.com/s/9n9y5eqw7klo24e/SaveThePlantSource.gmz" target="_blank"style="text-decoration: none; color:inherit;">Sources (GMS)</a></div>
+   </p>
+  </center>
+ </div>
+ 
+
+ <footer class="footer">
+  <a href="https://twitter.com/xmasyolka/" target="_blank">
+   <img src="../img/common/twitter.png" class="w3-hover-opacity twitter" style="transition: 0.2s;">
+  </a>
+  <p>
+   &#169; <a href="http://tehurn.com/not" target="_blank" style="text-decoration: none;">YOL</a> Productions Development. Made entirely by Yolk, 2016
+  </p>
+ </footer>
+</div>
+
+<a href="#logo"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a>
+
+<script>
+ var slideIndex = 1;
+ showDivs(slideIndex);
+
+ function plusDivs(n) 
+ {
+  showDivs(slideIndex += n);
+ }
+
+ function currentDiv(n) 
+ {
+  showDivs(slideIndex = n);
+ }
+
+ function showDivs(n) 
+ {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+
+  if (n > x.length) 
+  {
+   slideIndex = 1;
+  }   
+  if (n < 1) 
+  {
+   slideIndex = x.length;
+  } 
+
+  for (i = 0; i < x.length; i++) 
+  {
+   x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) 
+  {
+   dots[i].classList.remove("w3-green");
+  }
+
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].classList.add("w3-green");
+}
+</script>
+
+</body>
+</html> 
