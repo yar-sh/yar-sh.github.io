@@ -14,6 +14,7 @@
 <script src="/js/loadContentTabs.js"></script>
 <script>
 
+alert("test");
 //loads index main menu
 $.get("/menu.html", function(data){
  document.getElementById('mainMenu').innerHTML= data;
@@ -31,9 +32,10 @@ $.get("/footer.html", function(data){
 
 //for products page
 window.amountOfProducts = 2;
-
+//stores current opened tab
+window.opened = 'none';
 //set to default tab after load is done
-setTimeout(function(){loadContent('about',0)}, 100);
+setTimeout(function(){loadContent('about',0)}, 400);
 </script>
 </head>
 
