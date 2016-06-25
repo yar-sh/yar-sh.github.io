@@ -2,274 +2,157 @@
 <html>
 
 <head>
-<title>YOL Productions - pqlaMN</title>
+<title>YOLProductions - Index</title>
+<link rel="shortcut icon" href="/img/favicon.ico"/> 
+<link rel="stylesheet" href="/css/w3.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/product.css">
 
-<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="../img/favicon.ico"/> 
-<link rel="stylesheet" href="../css/w3.css">
-<link rel="stylesheet" href="../css/product.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/product.js"></script>
 <script>
-  function openMenuTab(evt, tabName) 
-  {
-   var i, x, tablinks;
-   x = document.getElementsByClassName("mainMenu");
-   tablinks = document.getElementsByClassName("tablink");
-   for (i = 0; i < x.length; i++) 
-   {
-     tablinks[i].classList.remove("w3-border-green");
-     tablinks[i].classList.remove("w3-light-green");
-   }
-   evt.currentTarget.firstElementChild.classList.add("w3-border-green");
-   evt.currentTarget.firstElementChild.classList.add("w3-light-green");
-  }
+//loads index main menu
+var menuXHR= new XMLHttpRequest();
+menuXHR.open('GET', '/productHolders/productMenu.html', true);
+menuXHR.onreadystatechange= function() {
+ if (menuXHR.readyState == 4 && menuXHR.status == 200) {
+  document.getElementById('mainMenu').innerHTML= this.responseText;
+ }
+};
+menuXHR.send();
 
-  function resizeMenuBG() 
-  { 
-   document.getElementById("menuBG").setAttribute("style", "height:" +  $( "#menu" ).height()+ "px; background-color: rgb(150,170,150);");
-  }
- 
-  var interval = setInterval(resizeMenuBG, 100);
-  $(window).scroll(function() 
-  {
-   var height = $(window).scrollTop();
-   var element = document.getElementById("menu");
-   if(height  > $( "#menu" ).height()) 
-   {
-    element.classList.add("w3-opacity");
-   }
-   else
-   {
-    element.classList.remove("w3-opacity");
-   }
-  });
+//loads header with the website title
+var logoXHR= new XMLHttpRequest();
+logoXHR.open('GET', '/logo.html', true);
+logoXHR.onreadystatechange= function() {
+ if (logoXHR.readyState == 4 && logoXHR.status == 200) {
+  document.getElementById('headerWrap').innerHTML= this.responseText;
+ }
+};
+logoXHR.send();
 
-  $(function() 
-  {
-   $('a[href*="#"]:not([href="#"])').click(function() 
-   {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) 
-    {
-     var target = $(this.hash);
-     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-     if (target.length) 
-     {
-      $('html, body').animate(
-      {
-       scrollTop: target.offset().top-$( "#menu" ).height()
-      }, 300);
-       return false;
-     }
-    }
-   });
-  });
+//loads footer
+var footerXHR= new XMLHttpRequest();
+footerXHR.open('GET', '/footer.html', true);
+footerXHR.onreadystatechange= function() {
+ if (footerXHR.readyState == 4 && footerXHR.status == 200) {
+  document.getElementById('footerWrap').innerHTML= this.responseText;
+ }
+};
+footerXHR.send();
 
-  window.onload = function() 
-  { 
-   var toTop = document.getElementById('toTop'); 
-   window.onscroll = function () 
-   { 
-    if ( window.pageYOffset > 120 ) 
-    {
-     toTop.style.display = 'block'; 
-    } 
-	else 
-	{
-	 toTop.style.display = 'none';
-	}
-   };
-  };
- </script>
+
+</script>
 </head>
 
-<body class="w3-myfont">
+<body id="YOLFPage">
 
-<div id="wrap">
-
- <div style="height: 43px" id="menuBG" >
- </div>
-
- <div class="w3-row w3-animate-top w3-light-grey w3-center" id="menu" style="transition: 0.5s">
-
-  <a href="../" style="font-size: 20px; text-decoration: none;" class="header">
-   <div class="w3-rest w3-hover-light-green w3-center w3-padding">Main page</div>
-   <hr style="padding: 0px; margin: 0px; height: 5px; border-color: rgb(204,204,204); background-color: rgb(204,204,204);">
-  </a>
-
-  <a href="#info" onclick="openMenuTab(event, 'info');">
-   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Information</div>
-  </a>
-
-  <a href="#feat" onclick="openMenuTab(event, 'feat');">
-   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Features</div>
-  </a>
-
-  <a href="#screens" onclick="openMenuTab(event, 'screens');">
-   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Gallery</div>
-  </a>
-
-  <a href="#down" onclick="openMenuTab(event, 'down');">
-   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Download</div>
-  </a>
-
- </div>
-
- <div class="titleDiv w3-container" id="logo">
-  <div class="w3-container w3-leftbar w3-border-green">
-   <p style="font-size: 50px;" class="header">YOL PRODUCTIONS</p>
-   <p style="font-size: 20px;">Make your life easier</p>
-  </div>
- </div>
-
-
-
- <div id="content">
-  <div id="info" class="mainMenu">
-   <div style="width: 50%; margin-left: auto; margin-right: auto; text-align: center;">
-    <br>
-    <img src="../img/common/lib.png" width="75%" style=" border-radius: 5px;">
-    <br>
-    <br>
+ <div class="w3-top" id="mainMenu"></div>
+ 
+ <header class="w3-container w3-margin-0 w3-padding-16" id="headerWrap"></header>
+ <section id="contentWrap" class="w3-container w3-margin-0 w3-padding-0">
+  <div class="w3-third" id="productInformation">
+   <div id="productImage">
+    <img src="/pqlaMN/pqlaMN.png">
    </div>
   </div>
- </div>
 
- <div class="onGreen" style="padding-top: 25px;">
-  <center>
-   <p id="names">
+  <div id="information" class="w3-center onBackground contentInfo">
+  <p>
     technical name: <font class="header important">pqlaMN Package</font><br>
     real name: <font class="header important">YOLib</font><br>
     version: <font class="header important">alpha v1</font><br>
    </p>
-  </center>
- </div>
+   </div>
 
- <div id="content">
-  <div class="w3-container">
-   <br>
-   <p>
-    This library for C++ contains many functions, that I use most often in my projects. This includes my own algorithms of image and text encryption as well as console window costumizations.
-    <br>
-    <br>
-    TODO:<br>
-    -Proper documentation<br>
-    -Examples<br><br>
+  <div class="noBackground contentInfo">
+   <p> YOLF is a Windows library with the common functions, that we use in our projects. It will never stop growing, so do not wait for FINAL release. <font class="header"> This library is used in all of my other projects, as a core for some important features. Please make sure, that you have it installed in order for other libraries to run.</font>
    </p>
    <hr>
-   <h2 class="header">Usage: </h2>
-   <ol>
-    <li>Documentation goes here</li>
-   </ol>
-  </div>
- </div>
-
- <div id="feat" class="onGreen mainMenu">
-  <section class="important header" id="names" style="margin-top: 20px;">Features</section>
-  <hr style="margin-bottom: 0px;">
-  <div class="w3-row">
-   <div class="w3-third featureBox">
-    <h3 class="header">Image encryption</h3>
-    <p>
-     This library has our own image encryption/decryption algorithms. The greatest thing about it is that you can use your own key phrase for this to work. Works with any common image format. Does not correctly support alpha layer in *.png files.
-     <font class="header"> You'll have to install <a href="http://www.graphicsmagick.org">GraphicsMagick</a> for this to work</font>
-    </p>
-   </div>
-   <div class="w3-third featureBox">
-    <h3 class="header">Text encryption</h3>
-    <p>
-      This library has our own text encryption/decryption algorithms. The greatest thing about it is that you can use your own key phrase for this to work. Works with any files that have raw text (*.txt, *.html, *.css, *.cpp etc.)
-    </p>
-   </div>
-   <div class="w3-third featureBox">
-    <h3 class="header">Console costumization</h3>
-    <p>
-     Now you can set color or size of the console only with one line.
-    </p>
-   </div>
+   <font class="header important">Usage: </font> I do not think that library is so complicated, that it requires documentation, but I have a function list on <a href="https://github.com/HaselLoyance/YOLF#functions-list" target="_blank">GitHub</a>.
   </div>
 
- <div id="content">
-  <div id="screens" class="w3-container mainMenu">
-  <br>
-   <section class="important header" id="names" style="margin-top: 20px; color:black;">Screenshots</section>
-   <p>
-    <div class="w3-content w3-display-container" style="max-width:50%; margin-top: 25px;">
-     <img class="mySlides w3-animate-left" src="pic1.jpg" style="width:100%;">
-     <img class="mySlides w3-animate-left" src="pic2.jpg" style="width:100%;">
-     <div class="w3-center w3-padding w3-large w3-text-white w3-display-bottomleft w3-black" style="width:100%">
-      <div class="w3-left w3-padding-left w3-hover-text-light-green" onclick="plusDivs(-1)">❮</div>
-      <div class="w3-right w3-padding-right w3-hover-text-light-green" onclick="plusDivs(1)">❯</div>
-      <span class="w3-badge demo w3-border w3-hover-light-green" onclick="currentDiv(1)"></span>
-      <span class="w3-badge demo w3-border w3-hover-light-green" onclick="currentDiv(2)"></span>
-     </div>
+  <div id="features" class="w3-center onBackground contentInfo">
+   <font class="important header">Features</font>
+   <hr>
+   <div class="w3-row">
+    <div class="w3-third">
+     <center>
+      <div id="featureBox">
+       <font class="header important">Image encryption</font>
+       <p> YOLF library provides great ability to encrypt your images with a given pass code. It supports all usual image formats, but not recommended for *.png files with transparency.
+       </p>
+      </div>
+     </center>
     </div>
+
+    <div class="w3-third">
+     <center>
+      <div id="featureBox">
+       <font class="header important">Text encryption</font>
+       <p> YOLF library has a unique text encryption/decryption algorithms. The greatest thing about it is that you can use your own key phrase for this to work. It is able to work with any files that have raw text (*.txt, *.html, *.css, *.cpp etc.) It has a full support of UTF-8 encoding.
+       </p>
+      </div>
+     </center>
+    </div>
+
+    <div class="w3-third">
+     <center>
+      <div id="featureBox">
+       <font class="header important">Console costumizations</font>
+       <p> It never was so easy to costumize the looks of the console window. You now have an ability to resize window, toggle visibility of the scrollbar, and, most importantly, change colors (and even invert them).
+       </p>
+      </div>
+     </center>
+    </div>
+   </div>
+  </div>
+
+  <div id="showcase" class="w3-padding-16 noBackground contentInfo w3-center">
+   <font class="important header">Screenshots</font>
+   <div class="w3-content w3-padding" id="slideshowWrap">
+    <img class="mySlides w3-animate-opacity" src="/pqlaMN/pic1.jpg">
+    <img class="mySlides w3-animate-opacity" src="/pqlaMN/pic2.jpg">
+
+    <a class="w3-btn-floating w3-grey w3-hover-light-green" id="btnSlideshowL" onclick="plusDivs(-1)"><i class="fa fa-arrow-left"></i></a>
+    <a class="w3-btn-floating w3-grey w3-hover-light-green" id="btnSlideshowR" onclick="plusDivs(+1)"><i class="fa fa-arrow-right"></i></a>
+   </div>
+  </div>
+
+  <div id="download" class="onBackground contentInfo w3-center">
+   <font class="important header" id="names"> Download </font>
+   <p><div class="w3-btn w3-hover-green"><a href="https://github.com/HaselLoyance/YOLF" target="_blank" style="text-decoration: none; color:inherit;">GitHub Repository</a></div>
    </p>
   </div>
- </div>
 
- <div id="down" class="onGreen mainMenu">
-   <center>
-   <section class="important header" id="names" style="margin-top: 20px; margin-bottom: 25px;"> Download </section>
-   <p>
-    <div class="w3-btn w3-hover-green"><a href="https://github.com/HaselLoyance/YOLF" target="_blank" style="text-decoration: none; color:inherit;">GitHub Repository</a></div>
-   </p>
-  </center>
- </div>
+ </section>
+ <footer id="footerWrap" class="w3-container w3-margin-0 w3-padding-32 w3-center"></footer>
 
-<footer class="footer">
-  <p>
-  <a href="http://tehurn.com/not" target="_blank" style="text-decoration: none;">YOL</a> Productions Development. Made entirely by Yolk, 2016
-  <font class="header"><a href="#"" onclick="openMenuTab(event, 'contact', 2);">Contact Us</a></font>
-  </p>
- </footer>
-</div>
-
-<a href="#logo"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a>
+ <a onclick="scrollTo('YOLFPage',-1)"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a>
 
 <script>
- var slideIndex = 1;
- showDivs(slideIndex);
+var slideIndex = 1;
 
- function plusDivs(n) 
- {
-  showDivs(slideIndex += n);
- }
-
- function currentDiv(n) 
- {
-  showDivs(slideIndex = n);
- }
-
- function showDivs(n) 
- {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-
-  if (n > x.length) 
-  {
-   slideIndex = 1;
-  }   
-  if (n < 1) 
-  {
-   slideIndex = x.length;
-  } 
-
-  for (i = 0; i < x.length; i++) 
-  {
-   x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) 
-  {
-   dots[i].classList.remove("w3-green");
-  }
-
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].classList.add("w3-green");
+function plusDivs(n) {
+slideIndex = slideIndex + n;
+showDivs(slideIndex);
 }
-</script>
 
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+showDivs(1);
+
+</script>
 </body>
-</html> 
+</html>
+

@@ -2,372 +2,66 @@
 <html>
 
 <head>
-<title>YOL Productions</title>
+<title>YOLProductions - Index</title>
+<link rel="shortcut icon" href="/img/favicon.ico"/> 
+<link rel="stylesheet" href="/css/w3.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/info.css">
 
-<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="img/favicon.ico"/> 
-<link rel="stylesheet" href="css/w3.css">
-<link rel="stylesheet" href="css/common.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/loadContentTabs.js"></script>
 <script>
-  var link = window.location.href;
-  var pos;
-  var gotoLink="about";
-  var hrefNumber=0;
 
-  if(link.search("#") != -1)
-  {
-   pos = link.search("#");
-   gotoLink = link.slice(pos+1);
-  }
+//loads index main menu
+var menuXHR= new XMLHttpRequest();
+menuXHR.open('GET', '/menu.html', true);
+menuXHR.onreadystatechange= function() {
+ if (menuXHR.readyState == 4 && menuXHR.status == 200) {
+  document.getElementById('mainMenu').innerHTML= this.responseText;
+ }
+};
+menuXHR.send();
 
-  switch(gotoLink) 
-  {
-   case "about":
-    gotoLink = "about";
-    hrefNumber = 0;
-    break;
-   case "products":
-    gotoLink = "products";
-   	hrefNumber =1;
-    break;
-   case "contact":
-   	gotoLink = "contact";
-   	hrefNumber = 2;
-    break;
-   case "terms":
-  	gotoLink = "terms";
-   	hrefNumber = 3;
-    break;
-   default:
-    gotoLink = "about";
-    hrefNumber = 0;
-  }
+//loads header with the website title
+var logoXHR= new XMLHttpRequest();
+logoXHR.open('GET', '/logo.html', true);
+logoXHR.onreadystatechange= function() {
+ if (logoXHR.readyState == 4 && logoXHR.status == 200) {
+  document.getElementById('headerWrap').innerHTML= this.responseText;
+ }
+};
+logoXHR.send();
 
-  function openMenuTab(evt, tabName, hrefNum) 
-  {
-   if(tabName == "default")
-   	tabName = gotoLink;
-   if(hrefNum == -1)
-   	hrefNum = hrefNumber;
+//loads footer
+var footerXHR= new XMLHttpRequest();
+footerXHR.open('GET', '/footer.html', true);
+footerXHR.onreadystatechange= function() {
+ if (footerXHR.readyState == 4 && footerXHR.status == 200) {
+  document.getElementById('footerWrap').innerHTML= this.responseText;
+ }
+};
+footerXHR.send();
 
-   var i, x, tablinks;
-   x = document.getElementsByClassName("mainMenu");
-   for (i = 0; i < x.length; i++) 
-   {
-    x[i].style.display = "none";
-   }
-   tablinks = document.getElementsByClassName("tablink");
-   for (i = 0; i < x.length; i++) 
-   {
-   	if(i != hrefNum)
-   	{
-     tablinks[i].classList.remove("w3-border-green");
-     tablinks[i].classList.remove("w3-light-green");
-    }
-    else
-    {
-     tablinks[i].classList.add("w3-border-green");
-     tablinks[i].classList.add("w3-light-green");
-     hrefNumber = -1;
-    }
-   }
-   document.getElementById(tabName).style.display = "block";
-   evt.currentTarget.firstElementChild.classList.add("w3-border-green");
-   evt.currentTarget.firstElementChild.classList.add("w3-light-green");
-  }
+//for products page
+window.amountOfProducts = 2;
 
-  function resizeMenuBG() 
-  { 
-   document.getElementById("menuBG").setAttribute("style", "height:" +  $( "#menu" ).height()+ "px; background-color: rgb(150,170,150);");
-  }
- 
-  var interval = setInterval(resizeMenuBG, 100);
-  $(window).scroll(function() 
-  {
-   var height = $(window).scrollTop();
-   var element = document.getElementById("menu");
-   if(height  > $( "#menu" ).height()) 
-   {
-    element.classList.add("w3-opacity");
-   }
-   else
-   {
-    element.classList.remove("w3-opacity");
-   }
-  });
-
-  $(function() 
-  {
-   $('a[href*="#"]:not([href="#"])').click(function() 
-   {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) 
-    {
-     var target = $(this.hash);
-     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-     if (target.length) 
-     {
-      $('html, body').animate(
-      {
-       scrollTop: target.offset().top-$( "#menu" ).height()
-      }, 300);
-       return false;
-     }
-    }
-   });
-  });
-
-  window.onload = function() 
-  { 
-   var toTop = document.getElementById('toTop'); 
-   window.onscroll = function () 
-   { 
-    if ( window.pageYOffset > 120 ) 
-    {
-     toTop.style.display = 'block'; 
-    } 
-	else 
-	{
-	 toTop.style.display = 'none';
-	}
-   };
-  };
- </script>
+//set to default tab after load is done
+setTimeout(function(){loadContent('about',0)}, 100);
+</script>
 </head>
 
-<body class="w3-myfont">
+<body id="indexPage">
 
-<div id="wrap">
-
- <div style="height: 43px" id="menuBG" >
- </div>
-
- <div class="w3-row w3-animate-top w3-light-grey w3-center" id="menu" style="transition: 0.5s">
-  <a href="#content" onclick="openMenuTab(event, 'about');">
-   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">About</div>
-  </a>
-
-  <a href="#content" onclick="openMenuTab(event, 'products');">
-   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Products</div>
-  </a>
-
-  <a href="#content" onclick="openMenuTab(event, 'contact');">
-   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Contact us</div>
-  </a>
-
-  <a href="#content" onclick="openMenuTab(event, 'terms');">
-   <div class="w3-quarter tablink w3-bottombar w3-hover-light-green w3-padding">Terms</div>
-  </a>
- </div>
-
- <div class="titleDiv w3-container" id="logo">
-  <div class="w3-container w3-leftbar w3-border-green">
-   <p style="font-size: 50px;" class="header">YOL PRODUCTIONS</p>
-   <p style="font-size: 20px;">Make your life easier</p>
-  </div>
- </div>
-
-
-
- <div id="content">
-  <div id="about" class="w3-container mainMenu w3-animate-left">
-   <br>
-   <h2 class="header">About YOL Productions</h2> 
-   <hr>
-   <p>YOL Productions is an independent application making company. It was originally created by only one person, who names himself Yolk. This is from Russian word Yolka (Йолка), which can simply be translated as Xmas Tree. 
-   </p>
-   <br>
-   <p>Our company mainly specifies on bringing the highest possible and very simple usability to the user. Most of our programs are console-based and are written using Microsoft Visual Studio C++. Although applications are console based, they are still very powerful. We also specialize on making games, game engines and libraries full of useful features.
-   </p>
-   <br>
-   <p>Some of our products will not be ever open-sourced, so for that reason, to ensure safety we always put results of Virustotal scan on product's page.
-   </p>
-   <br>
-   <p>We suggest you to check out <font class="header"><a href="#content" onclick="openMenuTab(event, 'terms', 3);">Terms</a></font> tab, so there are no misunderstandings between YOL Productions policies and you.
-   </p>
-   <br>
-   <div class="w3-center">
-   <img src="img/common/avamin.png" style="border: 2px solid rgb(70,92,58); border-radius: 20px; margin-bottom: 1%;" width="150px" height="150px">
-   </div>
-  </div>
-
-  <div id="products" class="w3-container mainMenu w3-animate-left">
-   <br>
-   <h2 class="header">Products</h2>
-   <hr>
-   <p>
-   Here you can find all of our products that are either already released or are in preparation for the future release. Please note, that every product has a technical name and a real name. This is done to ensure privacy.
-   <br>
-   <br>
-    <div class="w3-row w3-center">
-     <a href="pqlaMN/" id="noColor">
-      <div class="w3-half productHolder" style="transition: 0.5s">
-      <center>
-       <div class="w3-card-8 w3-hover-opacity card">
-        <img src="img/common/lib.png" style="width:100%; background-color: white;">
-         <div class="w3-container" style="text-align: left;">
-          <font class="header">Technical name:</font> pqlaMN Package
-          <br>
-          <font class="header">Real name:</font> YOLib
-         </div>
-       </div>
-      </center>
-     </div>
-    </a>
-
-    <a href="LD35/" id="noColor">
-      <div class="w3-half productHolder" style="transition: 0.5s">
-      <center>
-       <div class="w3-card-8 w3-hover-opacity card">
-        <img src="img/common/failed.png" style="width:100%; background-color: white;">
-         <div class="w3-container" style="text-align: left;">
-          <font class="header">Technical name:</font> LD35
-          <br>
-          <font class="header">Real name:</font> LD35
-         </div>
-       </div>
-      </center>
-     </div>
-    </a>
-    </div>
-
-    <div class="w3-row w3-center">
-     <a href="LD34/" id="noColor">
-      <div class="w3-half productHolder" style="transition: 0.5s">
-      <center>
-       <div class="w3-card-8 w3-hover-opacity card">
-        <img src="LD34/logo.png" style="width:100%; background-color: white;">
-         <div class="w3-container" style="text-align: left;">
-          <font class="header">Technical name:</font> LD34
-          <br>
-          <font class="header">Real name:</font> Save The Plant
-         </div>
-       </div>
-      </center>
-     </div>
-    </a>
-   <!-- <a href="igfxQJ/" id="noColor">
-     <div class="w3-half productHolder" style="transition: 0.5s">
-      <center>
-       <div class="w3-card-8 w3-hover-opacity card">
-        <img src="igfxQJ/logo.png" style="width:100%; background-color: white;">
-         <div class="w3-container" style="text-align: left;">
-          <font class="header">Technical name:</font> igfxQJ module
-          <br>
-          <font class="header">Real name:</font> YOLosu!bot
-         </div>
-       </div>
-      </center>
-     </div>
-    </a>-->
-    </div>
-
-   <!--
-   space for other productHolder
-   -->
-
-   </p>
-  </div>
-
-  <div id="contact" class="w3-container mainMenu w3-animate-left">
-   <br>
-   <h2 class="header">Contacts</h2>
-   <hr>
-   <p>
-   	There is many ways you can reach us. You can use our email: 
-   </p>
-   <div class="w3-leftbar w3-border-green commandInfo">
-    <p>
-      1. <font class="blueCommand">xmasyolka@gmail.com</font>
-    </p>
-   </div>
-   <br>
-   <p>Please specify the exact subject of mail.</p>
-   <br>
-   <p>
-    You can always tweet to us at <a href="https://twitter.com/xmasyolka/" target="_blank">@xmasyolka</a><br> 
-    Or even write me on <a href="https://new.vk.com/loyance" target="_blank">VK</a><br> 
-    Every customer is very valuable to us. We will try our best to answer you as quickly as possible.
-   </p>
-
-   <br>
-  </div>
-
-  <div id="terms" class="w3-container mainMenu w3-animate-left">
-   <br>
-   <h2 class="header">Terms and Conditions</h2>
-   <hr>
-   <br>
-   <font class="important">I. Terms</font>
-   <p>
-    By accessing the website <a href="http://xmasyolka.freevar.com">xmasyolka.freevar.com</a> and/or our software, you are agreeing to be bound by these Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.
-   </p>
-   <br>
-   <br>
-   <font class="important">II. Software</font>
-   <p>
-    By buying or using a product or a service that this website provides, you are agreeing to be bound by these points:
-    <ul>
-	 <li>The software cannot be violated or decompiled.</li>
-	 <li>The software cannot be stolen.</li>
-	 <li>The software in it's buyable version can't be used without a license provided by our company.</li>
-	 <li>The software can be bought only from this website or via our tools, which come included with the software.</li>
-	 <li>YOL Productions has the right to delete or suspend one or more license, without any advice, if one or more point of "Terms and Conditions" are violated.</li>
-	 <li>This website is not associated with any game/browsergame and their creator, and our Software may be against their TOS/EULA.</li>
-    </ul>
-   </p>
-   <br>
-   <font class="important">III. Refund</font>
-   <p>
-    After purchase it is not possible to get a refund. All products that you can buy has a free demo trial with limited functions. Test it before you buy it. 
-   </p>
-   <br>
-   <br>
-   <font class="important">IV. Privacy Policy</font>
-   <p>
-    All informaton about costumers (hwid, email, paying information) will never be shared with anyone under any circumstances. All data is encrypted with our own unshared algorithms and other common encryption methods.
-   </p>
-   <br>
-   <br>
-   <font class="important">V. Exchange Policy</font>
-   <p>
-    Your license can be exchanged (if your HWID changed). Contact us in any way and make sure that subject of your message is:</p>
-    <div class="w3-leftbar w3-border-green commandInfo">
-    <p>
-      1. <font class="blueCommand">&lt;</font><font class="redCommand">program name</font><font class="blueCommand">&gt;</font> <font class="redCommand">-</font> <font class="blueCommand">exchange</font>
-    </p>
-   </div> 
-   <br>
-   <p>Your email must include:</p>
-   <ul>
-    <li>Old HWID (not required, but desirable)</li>
-    <li>New HWID</li>
-    <li>Reason of the exchange</li>
-    <li>Proof of buying</li>
-   </ul>
-   <p>
-    If all is correct, your license will be exchanged as soon as possible.
-   </p>
-   <br>
-  </div>
- </div>
-
+ <div class="w3-top" id="mainMenu"></div>
  
+ <header class="w3-container w3-margin-0 w3-padding-16" id="headerWrap"></header>
+ <section id="contentWrap" class="w3-container w3-margin-0 w3-padding-0"><p style="font-size:100px" class="w3-center"><i class="fa fa-refresh"></i></p></section>
+ <footer id="footerWrap" class="w3-container w3-margin-0 w3-padding-32 w3-center"></footer>
 
- <footer class="footer">
-  <p>
-  <a href="http://tehurn.com/not" target="_blank" style="text-decoration: none;">YOL</a> Productions Development. Made entirely by Yolk, 2016
-  <font class="header"><a href="#"" onclick="openMenuTab(event, 'contact', 2);">Contact Us</a></font>
-  </p>
- </footer>
-</div>
+ <a href="#" onclick="loadContent('',-1)"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a>
 
-<a href="#logo"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a>
-<script>
- openMenuTab(event, 'default', -1);
- openMenuTab(event, 'default', -1);
-</script>
 </body>
-</html> 
+</html>
+
