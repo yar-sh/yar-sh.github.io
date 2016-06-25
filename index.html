@@ -15,34 +15,19 @@
 <script>
 
 //loads index main menu
-var menuXHR= new XMLHttpRequest();
-menuXHR.open('GET', '/menu.html', true);
-menuXHR.onreadystatechange= function() {
- if (menuXHR.readyState == 4 && menuXHR.status == 200) {
-  document.getElementById('mainMenu').innerHTML= this.responseText;
- }
-};
-menuXHR.send();
+$.get("/menu.html", function(data){
+ document.getElementById('mainMenu').innerHTML= data;
+});
 
 //loads header with the website title
-var logoXHR= new XMLHttpRequest();
-logoXHR.open('GET', '/logo.html', true);
-logoXHR.onreadystatechange= function() {
- if (logoXHR.readyState == 4 && logoXHR.status == 200) {
-  document.getElementById('headerWrap').innerHTML= this.responseText;
- }
-};
-logoXHR.send();
+$.get("/logo.html", function(data){
+ document.getElementById('headerWrap').innerHTML= data;
+});
 
 //loads footer
-var footerXHR= new XMLHttpRequest();
-footerXHR.open('GET', '/footer.html', true);
-footerXHR.onreadystatechange= function() {
- if (footerXHR.readyState == 4 && footerXHR.status == 200) {
-  document.getElementById('footerWrap').innerHTML= this.responseText;
- }
-};
-footerXHR.send();
+$.get("/footer.html", function(data){
+ document.getElementById('footerWrap').innerHTML= data;
+});
 
 //for products page
 window.amountOfProducts = 2;

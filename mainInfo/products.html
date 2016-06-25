@@ -1,17 +1,5 @@
-<!--hack that allows to run JS code on insereted page-->
 <link rel="stylesheet" href="/css/productHolders.css">
 
-
-<!--
-var product= new XMLHttpRequest();
-   product.open('GET', '/productHolders/product' + 1 +'.html', true);
-   product.onreadystatechange = function() {
-    if (product.readyState == 4 && product.status == 200) {
-     document.getElementById("infoContent").innerHTML += this.responseText;
-    }
-   };
-
-   product.send();-->
 <div id="infoContent" class="w3-container mainMenu w3-animate-left">
  <br>
  <h2 class="header">Products</h2> 
@@ -20,7 +8,7 @@ var product= new XMLHttpRequest();
  </p>
 </div>
 
-
+<!--hack that allows to run JS code on insereted page-->
 <iframe class="javascript">
 productPage = window.amountOfProducts;
 
