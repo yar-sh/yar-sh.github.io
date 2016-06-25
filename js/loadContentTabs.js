@@ -3,7 +3,7 @@ function loadContent(nameOfPage, tabNumber, calledFromOtherHTML = false) {
  $(this).click(function(event) { //prevents jump to the anchor point
     event.preventDefault();
  });
-
+alert("debug");
 
  if(window.pageYOffset > 100) window.parent.$('html, body').stop().animate({scrollTop:0}, 400); //scrolls to the top
 
