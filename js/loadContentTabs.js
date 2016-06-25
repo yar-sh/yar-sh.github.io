@@ -1,6 +1,3 @@
-//stores current opened tab
-opened = 'none';
-
 //loads blocks of text on the main page and displays selected tab
 function loadContent(nameOfPage, tabNumber, calledFromOtherHTML = false) {
  $(this).click(function(event) { //prevents jump to the anchor point
@@ -14,10 +11,10 @@ function loadContent(nameOfPage, tabNumber, calledFromOtherHTML = false) {
   if(tabNumber != -1) {
    var tabLinks = parent.document.getElementsByClassName("tabLink");
 
-   if(calledFromOtherHTML) parent.document.opened = 'none'; //will always redraw block of text in content
+   if(calledFromOtherHTML) window.opened = 'none'; //will always redraw block of text in content
 
    //if new block of text is requested
-   if(parent.document.opened != window.location.href.split("#")[0] + nameOfPage +'.html') {
+   if(window.opened != window.location.href.split("#")[0] + nameOfPage +'.html') {
 
     //while it loads - put loading symbol
     parent.document.getElementById("contentWrap").innerHTML='<p style="font-size:100px" class="w3-center"><i class="fa fa-refresh"></i></p>';
@@ -36,7 +33,7 @@ function loadContent(nameOfPage, tabNumber, calledFromOtherHTML = false) {
     tabLinks[(tabNumber+4)].classList.add("w3-light-green");
 
     //sets current opened window
-    parent.document.opened = parent.window.location.href.split("#")[0] + nameOfPage +'.html';
+    window.opened = parent.window.location.href.split("#")[0] + nameOfPage +'.html';
 
     //loads new content
     $.get('/mainInfo/' + nameOfPage+'.html', function(data) {
