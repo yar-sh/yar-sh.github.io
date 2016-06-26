@@ -36,6 +36,8 @@ function loadContent(nameOfPage, tabNumber, calledFromOtherHTML = false) {
 
     //loads new content
     $.get('/mainInfo/' + nameOfPage+'.html', function(data) {
+      alert(nameOfPage);
+      alert(data);
      document.getElementById('contentWrap').innerHTML= data;
      $('.javascript').each(function() {
       eval($(this).text());
