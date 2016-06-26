@@ -26,7 +26,7 @@ function scrollToGame()
  } 
 }
 $(window).on("load resize", function() {scrollToGame()});
-setTimeout(function(){scrollToGame()}, 100);
+setTimeout(function(){scrollToGame()}, 1000);
 
 //loads index main menu
 $.get("/html5game/menuBack.html", function(data){
