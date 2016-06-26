@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>YOLProductions - Index</title>
+<title>YOLProductions - pqlaMN</title>
 <link rel="shortcut icon" href="/img/favicon.ico"/> 
 <link rel="stylesheet" href="/css/w3.css">
 <link rel="stylesheet" href="/css/common.css">
@@ -15,6 +15,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" type="text/javascript"></script>
 <script src="/js/main.js" type="text/javascript"></script>
 <script src="/js/product.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 //loads index main menu
 $.get("/productHolders/productMenu.html", function(data){
@@ -26,13 +27,27 @@ $.get("/logo.html", function(data){
  document.getElementById('headerWrap').innerHTML= data;
 });
 
-//loads footer
-$.get("/footer.html", function(data){
- document.getElementById('footerWrap').innerHTML= data;
-});
 
+//gallery
+var slideIndex = 1;
 
+function plusDivs(n) {
+slideIndex = slideIndex + n;
+showDivs(slideIndex);
+}
 
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+$(window).load(function(){
+showDivs(1);});
 </script>
 </head>
 
@@ -110,38 +125,29 @@ $.get("/footer.html", function(data){
    </div>
   </div>
 
-  <div id="download" class="onBackground contentInfo w3-center">
-   <font class="important header" id="names"> Download </font>
-   <p><div class="w3-btn w3-hover-green"><a href="https://github.com/HaselLoyance/YOLF" target="_blank" style="text-decoration: none; color:inherit;">GitHub Repository</a></div>
-   </p>
+<!--too lazy to do proper css classes. It works, so who cares?-->
+  <div id="download" class="onBackground contentInfo w3-center" style="padding-top:45px">
+   <div class="w3-row" style="width:30%; min-width:350px; text-align:center; margin-left:auto; margin-right:auto;">
+    <div class="w3-half" style="margin-top:-25px;">
+     <font class="important header" id="names" >Download</font>
+     <p style=" margin-top:-10px;"><div class="w3-btn w3-hover-green" style="border:2px white solid; border-radius:5px;"><a href="https://github.com/HaselLoyance/YOLF" target="_blank" style="text-decoration: none; color:inherit; ">GitHub Repository</a></div>
+     </p>
+    </div>
+
+    <div class="w3-half" style="">
+     <a class="w3-btn-floating w3-hover-opacity w3-green" href="" onclick="OpenInNewTab('https://vk.com/loyance');"><i class="fa fa-vk"></i></a>
+     <a class="w3-btn-floating w3-hover-opacity w3-green" href="" onclick="OpenInNewTab('https://twitter.com/xmasyolka');" ><i class="fa fa-twitter"></i></a>
+     <a class="w3-btn-floating w3-hover-opacity w3-green" href="" onclick="OpenInNewTab('https://github.com/HaselLoyance');"><i class="fa fa-github"></i></a>
+    </div>
+   </div>
+
+   <p style=" margin-top:7px;"><a href="" onclick="OpenInNewTab('http://tehurn.com/not');" target="_blank" style="text-decoration: none; cursor: default; color: rgb(244,244,244);">YOL</a> Productions. Made entirely by Yolk, 2016</p>
+   <p style=" margin-top:-20px; margin-bottom:5px">Powered with <a href="http://www.w3schools.com/w3css/default.asp" target="_blank" style="color: rgb(244,244,244);">w3.css</a></p>
   </div>
-
  </section>
- <footer id="footerWrap" class="w3-container w3-margin-0 w3-padding-32 w3-center"></footer>
 
- <a onclick="scrollTo('YOLFPage',-1)"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a>
+ <a href="" onclick="scrollTo('YOLFPage',-1)"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a>
 
-<script type="text/javascript">
-var slideIndex = 1;
-
-function plusDivs(n) {
-slideIndex = slideIndex + n;
-showDivs(slideIndex);
-}
-
-function showDivs(n) {
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-
-showDivs(1);
-
-</script>
 </body>
 </html>
 

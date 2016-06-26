@@ -26,8 +26,8 @@ body
 {
     background-color: rgb(150,170,150);
     font-family: Rajdhani, Arial, "Segoe UI",  sans-serif;
-
 }
+
 
 @-moz-keyframes spin {
     from { -moz-transform: rotate(0deg); }
@@ -45,6 +45,7 @@ body
 #mainMenu
 {
 	z-index: 50;
+	cursor: pointer;
 }
 #mainMenu, #navSmall
 {
@@ -136,7 +137,7 @@ footer p
 	display: none;
 	right: 10px;
 	bottom: 10px;
-	opacity: 0.4;
+	opacity: 0.6;
 }
 #toTop:hover
 {
