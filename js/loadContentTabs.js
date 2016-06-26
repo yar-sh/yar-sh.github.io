@@ -7,7 +7,6 @@ function loadContent(nameOfPage, tabNumber, calledFromOtherHTML = false) {
 
  if(window.pageYOffset > 100) window.parent.$('html, body').stop().animate({scrollTop:0}, 400); //scrolls to the top
 
- window.parent.$("body").promise().done(function(){
   if(tabNumber != -1) {
    var tabLinks = parent.document.getElementsByClassName("tabLink");
 
@@ -46,5 +45,4 @@ function loadContent(nameOfPage, tabNumber, calledFromOtherHTML = false) {
     });
    }
   }
- });
 }

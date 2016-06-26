@@ -42,6 +42,10 @@ body
     to {transform:rotate(360deg);}
 }
 
+#mainMenu
+{
+	z-index: 50;
+}
 #mainMenu, #navSmall
 {
 	transition: .30s;
