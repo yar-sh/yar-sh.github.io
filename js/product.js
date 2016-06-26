@@ -1,4 +1,5 @@
 function scrollTo(toID, tabNumber) {
+ event.preventDefault();
  if(tabNumber != -1) {
 	var tabLinks = parent.document.getElementsByClassName("tabLink");
 	for (i = 0; i < tabLinks.length; i++) { //make all tabs unselected
@@ -14,7 +15,6 @@ function scrollTo(toID, tabNumber) {
   tabLinks[(tabNumber+4)].classList.add("w3-border-green");
   tabLinks[(tabNumber+4)].classList.add("w3-light-green");
  }
- event.preventDefault();
  var toPos = $("#"+toID).position().top - $( "#mainMenu" ).height();
  window.parent.$('html, body').stop().animate({scrollTop:toPos}, 400);
 };
