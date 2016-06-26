@@ -34,8 +34,11 @@ window.amountOfProducts = 2;
 //stores current opened tab
 var openedTab = 'none';
 
-//set to default tab after load is done
-setTimeout(function(){loadContent('about',0,false)}, 1000);
+//set to default tab after load is done (ONE OF THESE MUST WORK)
+setTimeout(function(){loadContent('about',0,false)}, 10);
+$(window).load(function(){loadContent('about',0,false);});
+$(document).load(function(){loadContent('about',0,false);});
+
 </script>
 </head>
 
