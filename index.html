@@ -33,9 +33,10 @@ $.get("/footer.html", function(data){
 //for products page
 window.amountOfProducts = 2;
 //stores current opened tab
-window.opened = 'none';
+var openedTab = 'none';
 //set to default tab after load is done
-setTimeout(function(){loadContent('about',0,false)}, 10);
+setTimeout(function(){alert("test2");}, 10);
+setTimeout(function(){loadContent('about',0,false)}, 1000);
 </script>
 </head>
 
