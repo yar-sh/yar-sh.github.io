@@ -1,5 +1,6 @@
 //loads blocks of text on the main page and displays selected tab
 function loadContent(nameOfPage, tabNumber, calledFromOtherHTML = false) {
+ akert("function called");
  $(this).click(function(event) { //prevents jump to the anchor point
     event.preventDefault();
  });
