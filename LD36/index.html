@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>YOLProductions - LD36</title>
+<link rel="shortcut icon" href="/img/favicon.ico"/> 
+<link rel="stylesheet" href="/css/w3.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/LDGame.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/product.js" type="text/javascript"></script>
+<script src="/js/gallery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+//loads index main menu
+$.get("/productHolders/productMenu.html", function(data){
+ document.getElementById('mainMenu').innerHTML= data;
+});
+
+//loads header with the website title
+$.get("/logo.html", function(data){
+ document.getElementById('headerWrap').innerHTML= data;
+});
+
+//loads footer
+$.get("/footer.html", function(data){
+ document.getElementById('footerWrap').innerHTML= data;
+});
+
+</script>
+
+<script>//for the game. Just copy and paste from ludum dare
+ function c2_toggle_fullscreen() {
+ var elem = document.getElementById('embed');
+ if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+ } else if (elem.msRequestFullscreen) {
+  elem.msRequestFullscreen();
+ } else if (elem.mozRequestFullScreen) {
+  elem.mozRequestFullScreen();
+ } else if (elem.webkitRequestFullscreen) {
+  elem.webkitRequestFullscreen();
+ }
+}
+      
+function c2_play_game() {
+ var elm = document.getElementById('embed-frame');
+ elm.innerHTML = '<iframe id="embed" src="http://uploads.ungrounded.net/alternate/1014000/1014262_alternate_36519_r1.zip/?NewgroundsAPI_PublisherID=1&amp;NewgroundsAPI_SandboxID=57c305bc090cb&amp;NewgroundsAPI_SessionID=fj3GoVCN6zeUfx8YcWcY5ed0f2cbc53e4a94e3dd3355556498f17e92c391W2PB&amp;NewgroundsAPI_UserName=HaselLoyance&amp;NewgroundsAPI_UserID=5631392&amp;ng_username=HaselLoyance" width="778" height="584" frameborder="0" allowfullscreen=""></iframe><div class="embed-controls"><img src="http://ludumdare.com/compo/wp-content/plugins/compo2/art/Power.png" onclick="c2_exit_game();"></div>';
+}
+      
+function c2_exit_game() {
+ var elm = document.getElementById('embed-frame');
+ elm.innerHTML = '<div id="embed" onclick="c2_play_game();" style="width:778px;height:584px"><img class="embed-icon" src="/LD36/pic1.jpg"><div class="embed-overlay"></div><img class="embed-icon" src="/compo/wp-content/plugins/compo2/art/play.png"></div>';
+}
+</script>
+</head>
+
+<body id="LD36Page">
+
+ <div class="w3-top" id="mainMenu"></div>
+ 
+ <header class="w3-container w3-margin-0 w3-padding-16" id="headerWrap"></header>
+ 
+ <section id="contentWrap" class="w3-container">
+  <div class="w3-third w3-margin-top w3-margin-bottom" id="productInformation">
+   <div id="productImage">
+    <img src="/LD36/logo.jpg">
+   </div>
+  </div>
+
+  <div id="information" class="w3-center onBackground contentInfo">
+   <p> technical name: <font class="header important">LD36</font><br>
+    real name: <font class="header important">The Doors</font><br>
+    version: <font class="header important">Release 1.0</font><br>
+   </p>
+  </div>
+
+  <div class="noBackground contentInfo">
+   <p>
+    First door was made more than 5000 years ago. <br>
+Doors block off, and allow access within an enclosed space. <br>
+But for ancient people doors also had mythical meaning. <br><br>
+
+Someone thought their LAST door would lead to the new life. <br><br>
+
+The others' guess was the endless void. 
+</p>
+    <hr>
+    Theme: Ancient<br>
+    Features: <br id="features">
+    
+    
+-Top-view game, (where every room fits on one screen) <br>
+-Easy to understand gameplay, (with only six buttons)  <br>
+-Deep storyline, (even deeper than you think)  <br>
+-Unbelievable plot turns, (it's so unbelievable that I can't make a joke)  <br>
+-Five rooms with deadly traps, (not that kind of traps, but usual traps)  <br>
+-Gorgeous cutscenes (one of them includes epilepsy warning. This is not a joke) 
+    <hr>
+    Left arrow - Left <br>
+Right arrow - Right <br>
+Up arrow - Up <br>
+Down arrow - Down <br>
+Spacebar - Jump <br>
+'E' - Use/interact 
+    <hr>
+    CHEATS: <br>
+If you find any level difficult for you to complete - hold CTRL and move your cursor around the screen. The character will be placed on your cursor coordinates.
+<hr>
+Game was done in 48 hours for Ludum Dare 36: <a target="_blank" href="http://ludumdare.com/compo/ludum-dare-36/?action=preview&uid=47228">http://ludumdare.com/compo/ludum-dare-36/?action=preview&uid=47228</a>
+
+   </p>
+  </div>
+
+  <div id="showcase" class="w3-padding-16 contentInfo w3-center onBackground">
+   <font class="important header">Screenshots</font>
+   <div class="w3-content w3-padding" id="slideshowWrap">
+    <img class="mySlides w3-animate-opacity" src="/LD36/logo.jpg">
+    <img class="mySlides w3-animate-opacity" src="/LD36/pic1.jpg">
+    <img class="mySlides w3-animate-opacity" src="/LD36/pic2.jpg">
+
+    <a class="w3-btn-floating w3-grey w3-hover-light-green" id="btnSlideshowL" onclick="plusDivs(-1)"><i class="fa fa-arrow-left"></i></a>
+    <a class="w3-btn-floating w3-grey w3-hover-light-green" id="btnSlideshowR" onclick="plusDivs(+1)"><i class="fa fa-arrow-right"></i></a>
+   </div>
+  </div>
+
+  <div class="w3-padding-0 w3-margin-0 noBackground">
+   <div class="w3-padding-16 contentInfo w3-center">
+    <font class="important header">Online Version</font>
+    <hr style="margin-bottom: 30px;">
+    <div id='embed-view'><div id='embed-frame'><div id='embed' onclick='c2_play_game();' style="width:778px;height:584px"><img class='embed-icon' src='/LD36/pic1.jpg'><div class='embed-overlay'></div><img class='embed-icon' src='http://ludumdare.com/compo/wp-content/plugins/compo2/art/play.png' /></div></div>
+    </div>
+   </div>
+
+
+   <div id="download" class="contentInfo w3-center"> 
+    <font class="important header" id="names"> Download </font> 
+    <p>
+     <div class="w3-btn w3-hover-green w3-margin-bottom"><a href="https://mega.nz/#!CwVk3ILB!ryzU6bZzufzrifk16JuaA-CvIag8SoRnq7UPtD0pEd0" target="_blank" style="text-decoration: none; color:inherit;">For Windows</a></div><br>
+     <div class="w3-btn w3-hover-green"><a href="https://mega.nz/#!W0UCEQxI!ulZWme8WNV0MnAiQMGujVE5n6Ow-5eYqzsvIYMKvbpw" target="_blank" style="text-decoration: none; color:inherit;">Sources (GMS)</a></div>
+    </p>
+   </div>
+  </div>
+ </section>
+
+ <footer id="footerWrap" class="w3-container w3-margin-0 w3-padding-32 w3-center"></footer> 
+
+ <a onclick="scrollTo('LD36Page',-1)"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a> 
+
+</body>
+</html> 
