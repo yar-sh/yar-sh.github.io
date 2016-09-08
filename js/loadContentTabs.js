@@ -6,8 +6,9 @@ function loadContent(nameOfPage, tabNumber, calledFromOtherHTML) {
  $(this).click(function(event) { //prevents jump to the anchor point 
   event.preventDefault(); 
  }); 
- 
- 
+
+ if(calledFromOtherHTML==true)
+ window.location.href = "/";
  if(window.pageYOffset > 100) window.parent.$('html, body').stop().animate({scrollTop:0}, 400); //scrolls to the top 
  
  window.parent.$("body").promise().done(function(){ 
@@ -28,7 +29,7 @@ function loadContent(nameOfPage, tabNumber, calledFromOtherHTML) {
    tabLinks[(tabNumber+4)].classList.add("w3-border-green");
    tabLinks[(tabNumber+4)].classList.add("w3-light-green");
 
-   if(calledFromOtherHTML) openedTab = 'none'; //will always redraw block of text in content
+   if(calledFromOtherHTML == true) openedTab = 'none'; //will always redraw block of text in content
 
    //if new block of text is requested
    if(openedTab != parent.window.location.href.split("#")[0] + nameOfPage +'.html') {

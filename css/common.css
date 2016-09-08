@@ -107,6 +107,18 @@ header p
 	color: rgb(36,78,34);
 	transition: 0.2s;
 }
+
+.linkColor
+{
+	color: rgb(58,83,8);
+	transition: 0.2s;
+}
+
+.linkColor:hover
+{
+	color: rgb(36,78,34);
+	transition: 0.2s;
+}
 hr
 {
 	border: 0;

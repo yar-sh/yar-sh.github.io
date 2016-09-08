@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>YOLProductions - MSPAor</title>
+<link rel="shortcut icon" href="/img/favicon.ico"/> 
+<link rel="stylesheet" href="/css/w3.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/product.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/product.js" type="text/javascript"></script>
+<script src="/js/loadContentTabs.js" type="text/javascript"></script>
+<script src="/js/gallery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+//loads index main menu
+$.get("/productHolders/productMenu.html", function(data){
+ document.getElementById('mainMenu').innerHTML= data;
+});
+
+//loads header with the website title
+$.get("/logo.html", function(data){
+ document.getElementById('headerWrap').innerHTML= data;
+});
+
+//loads footer
+$.get("/footer.html", function(data){
+ document.getElementById('footerWrap').innerHTML= data;
+});
+
+</script>
+</head>
+
+<body id="MSPAorPage">
+
+ <div class="w3-top" id="mainMenu"></div>
+ 
+ <header class="w3-container w3-margin-0 w3-padding-16" id="headerWrap"></header>
+ <div class="w3-third w3-margin-top w3-margin-bottom" id="productInformation">
+   <div id="productImage">
+    <img src="/MSPAor/logo.jpg">
+   </div>
+  </div>
+
+  <div id="information" class="w3-center onBackground contentInfo">
+   <p> technical name: <font class="header important">MSPAo reader</font><br>
+    real name: <font class="header important">MSPA Offline Archive</font><br>
+    version: <font class="header important">Alpha 1.0</font><br>
+   </p>
+  </div>
+
+  <div class="noBackground contentInfo">
+   <p> This is a full local and offline copy of <a href="http://www.mspaintadventures.com/?viewpage=archive" class="linkColor" target="_blank">Microsoft Paint Adventures (MSPA)</a> website. All content in this archive is viewable on any device even if you do not have internet connection. 99% of flash animations are converted to mp4 videos for browser with no support of *.swf files. Basically, you can finally read amazing MSPA comics on your tablet/mobile devices, without missing out in an action in animations.<br><br>
+   Because of *.swf to *.mp4 conversion, animated content takes up a lot more space than before. For your convience animation archive was split up into several parts.
+   </p>
+  </div>
+
+  <div id="features" class="w3-center onBackground contentInfo">
+   <font class="important header">Features</font>
+   <hr>
+   <div class="w3-row">
+    <div class="w3-third">
+     <center>
+      <div id="featureBox">
+       <font class="header important">ALL COMICS</font>
+       <p>This archive includes all the current existing comics from MSPA website. Comics content was left as it is on an original website. 
+       </p>
+      </div>
+     </center>
+    </div>
+
+    <div class="w3-third">
+     <center>
+      <div id="featureBox">
+       <font class="header important">REDESIGN</font>
+       <p>The color scheme and style of every page was left, but a great part of distracting banners, links and menus was removed. Now it looks simple and nothing distracts you from reading.
+       </p>
+      </div>
+     </center>
+    </div>
+
+    <div class="w3-third">
+     <center>
+      <div id="featureBox">
+       <font class="header important">ANIMATIONS</font>
+       <p>All posible animations were converted to mp4, which means you can view them on any device without problems. This will not require you installing addons, as mp4 videos are supported in every browser.
+       </p>
+      </div>
+     </center>
+    </div>
+   </div>
+  </div>
+
+  <div class="w3-padding-0 w3-margin-0 noBackground">
+   <div id="showcase" class="w3-padding-16 contentInfo w3-center">
+    <font class="important header">Screenshots</font>
+    <div class="w3-content w3-padding" id="slideshowWrap">
+     <img class="mySlides w3-animate-opacity" src="/MSPAor/scr1.jpg">
+     <img class="mySlides w3-animate-opacity" src="/MSPAor/scr2.jpg">
+
+     <a class="w3-btn-floating w3-grey w3-hover-light-green" id="btnSlideshowL" onclick="plusDivs(-1)"><i class="fa fa-arrow-left"></i></a>
+     <a class="w3-btn-floating w3-grey w3-hover-light-green" id="btnSlideshowR" onclick="plusDivs(+1)"><i class="fa fa-arrow-right"></i></a>
+    </div>
+   </div>
+   
+   <div class="onBackground contentInfo" style="text-align:center;">
+       <font class="header important" >FAQ</font><br>
+       <div  style="text-align:left;">
+       <font class="important">1. Is it even legal?</font>
+       <p>This is a big question, but I'll keep the answer small. There are no restritions on MSPA content distribution, because there is simply no license. The only thing that is related to some kind of policy/terms on the MSPA website is <a href="http://www.mspaintadventures.com/privacypolicy.htm" target="_blank">Privacy Policy</a>, but there is nothing to be said about sharing/distributing content. I'm NOT putting this content as a thing of my own creation and I'm NOT charging any money for it. Plus, on every page I have a link to the original page and original author. So how I see it - Yes, it is legal.</p>
+       <font class="important">2. What are the ALL COMICS?</font>
+       <p>Every single comic on MSPA. Jailbreak, Problem Sleuth, Bard Quest, Blood Spade (it's only one page, but still), Ryanquest (not mentioned anywhere, but it exists), Sweet Bro and Hella Jeff and ONLY A HALF (yet) of Homestuck. Archive also contains all the extra pages, that were made for donators.</p>
+       <font class="important">3. Only half of Homestuck?</font>
+       <p>Sadly, yes. This half is everything from beginning of Act 1 to the end of Intermission 2. The main reason for that, is because I did not finish reading Homestuck, and some parts of the downloading process include spoilers, and I don't want to ruin the fun. It will be updated with all the pages once I finish it.</p>
+       <font class="important">4. What are the spoilers in the downloading process? You download pages by hand?</font>
+       <p>For page downloads I wrote a parser, so there is no problem with that. It just runs and outputs logs to the console. Not to much to spoil there. The problem are animations. To convert them to mp4 I use <a href="https://www.newgrounds.com/wiki/creator-resources/flash-resources/swivel" target="_blank">Swivel</a> and conversion progress involves me in watching the cutscenes.</p>
+       <font class="important">5. You wrote something about 99% of animations. What are the 1%?</font>
+       <p>Those are not animations, but interactive games, which involve user input. I did not include them, so to check them out you'll need the internet connection.</p>
+       <font class="important">6. How do I install/unpack the archives?</font>
+       <p>That's a good question, because I used ZSTD algorithm to pack everything (gotta save those 5MB from animation archives). In download links you can find README files for every archive. They contain all the instructions as well as hash information.</p>
+       <font class="important">7. How are archives devided?</font>
+       <p>I have a MSPA-Offline archive, which contains all the pages with all the graphics for all the comics. The only exception is Homestuck. There are only 4110 pages. Once it is fully done, I will replace this archive, so it contains everything. I also will make a "patch" to download only missing Homestuck pages.<br>Other archives are animations. They are devided into several parts, because they take up more space. Once Homestuck is finished - there will be more archives with animations. </p>
+       <font class="important">8. Why Mediafire and not Torrent?</font>
+       <p>Mediafire was my choice as it does not have bandwidth limit, so you can download archives without limiting the amount of how much you can download. Torrent file (only one for everything) will be available once everything is finished (other Homestuck pages).</p>
+       <font class="important">9. I found a mistake on a page. What can I do?</font>
+       <p>You can find how to contact me on the contact page (really?).</a></p>
+       </div>
+   </div>
+
+   <div id="download" class="contentInfo w3-center"> 
+    <font class="important header" id="names"> Download </font> 
+    <p><div class="w3-btn w3-hover-green"><a href="https://www.mediafire.com/folder/300li7cf1x4gz/MSPA-Offline" target="_blank" style="text-decoration: none; color:inherit;">MSPA-Offline</a></div> 
+    </p> 
+    <p><div class="w3-btn w3-hover-green"><a href="https://www.mediafire.com/folder/e7agcgvlefjn1/Homestuck-Cutscenes" target="_blank" style="text-decoration: none; color:inherit;">Homestuck-Cutscenes</a></div> 
+    </p> 
+   </div> 
+  </div>
+ 
+ </section> 
+ <footer id="footerWrap" class="w3-container w3-margin-0 w3-padding-32 w3-center"></footer> 
+ 
+ <a onclick="scrollTo('MSPAorPage',-1)"><div class="w3-btn w3-hover-green" id="toTop">To top</div></a> 
+ 
+</body>
+</html>
+
+
