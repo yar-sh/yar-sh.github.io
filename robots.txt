@@ -1,2 +1,9 @@
 User-agent: Googlebot
-Disallow: /mainInfo/footer.html
+Disallow: /footer.html
+Disallow: /logo.html
+Disallow: /menu.html
+Disallow: /404.html
+Disallow: /mainInfo/about.html
+Disallow: /mainInfo/contacts.html
+Disallow: /mainInfo/products.html
+Disallow: /mainInfo/terms.html
