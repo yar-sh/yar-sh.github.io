@@ -67,3 +67,9 @@ function OpenInNewTab(url) {
   var win = window.open(url, '_blank');
 }
 
+
+//analytics
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.src = "/js/analytics.js";
+$("head").append(s);
