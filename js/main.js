@@ -69,7 +69,7 @@ function GetPageContents(folder)
 
 	$.ajax({
 	  type: "GET",
-	  url: "~0_" + folder + "/index.html",
+	  url: "0_" + folder + "/index.html",
 	  success: function(data){
 	    $("#contentPane").html(data);
 			DrawPageElements(true);
