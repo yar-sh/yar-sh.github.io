@@ -1,2 +1,2 @@
 User-agent: Googlebot
-Disallow: /mda.html
+Disallow: /projectTemplatePage.html
