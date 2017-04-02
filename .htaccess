@@ -1,7 +1,3 @@
-RewriteEngine On
-
-RewriteRule ^MSPAor.*$ /#MSPAor [R=301,L,NE]
-
 ErrorDocument 404 /404.html
 <Directory />
 	Allow from all
