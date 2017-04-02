@@ -1,6 +1,6 @@
+RewriteRule ^/MSPAor/index.html /#MSPAor [R=301,NE,L]
 ErrorDocument 404 /404.html
 <Directory />
 	Allow from all
 	Require all granted
-	RewriteRule ^MSPAor/index.html /#MSPAor [R=301,NE,L]
 </Directory>
