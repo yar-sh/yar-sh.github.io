@@ -1,0 +1,123 @@
+<div id="pageTitle" class="whiteText">
+   <p>SGPSPE</p>
+</div>
+<img src="/0_SGPSPE/logo.jpg" id="pageImage">
+<div id="pageSubTitle" class="whiteText">
+   <p><font class="smallerFont">short: </font><font class="bold">SGPSPE</font></p>
+   <p><font class="smallerFont">release: </font><font class="bold">Steins;Gate PSP English Patch</font></p>
+</div>
+<div id="textArea" class="solidBG">
+   <p><i>I am not going to lie, this worldline is decent enough. But this patch is going to make it better. El Psy Congroo.</i><br><br>Steins;Gate was released for PSP in 2011. This version of the game did not get much attention in the west, since it was only available only in Japanese. Until now. I present you the Steins;Gate PSP English Patch. Combined from bits and pieces of other translations for other platforms, it brings the English Steins;Gate experience to the PSP.</p>
+
+   <hr>
+   <p class="bold">✔️ Current version (v0.9)</p>
+   <p>
+   <ul>
+      <li>Translated story scripts</li>
+      <li>Translated DICT (tips)</li>
+      <li>Translated phonebook</li>
+      <li>Translated phone messages/emails, backgrounds and songs</li>
+      <li>Translated backgrounds</li>
+      <li>Translated cutscenes*</li>
+      *This doesn't apply to <span class="codeFragment">OPEN3.PMF</span>, since there is no available replacement from the PC version of the game.
+   </ul>
+   <br>(pretend that each item on the list has "(where applicable)" after it)
+   </p>
+
+   <hr>
+   <p class="bold">🚩 Roadmap</p>
+   <p>
+   <ul>
+      <b>v1.0.0:</b>
+      <li>Translate UI elements</li>
+      <li>Translate phone menus</li>
+      <li>Change PSPMENU button UI language</li>
+      <li>Fix bugs and inconsistencies</li>
+      <li>Find a way to translate menu textures (Clear list, Movie/CG gallery, etc)</li>
+      <br>
+      <b>v1.0.x:</b>
+      <li>Fix bugs and inconsistencies</li>
+   </ul>
+   </p>
+
+   <hr>
+   <p class="bold">💿 ISO information</p>
+   <p>I <i>honestly and legally purchased***</i> the copy of the Steins;Gate from Cdromance. Here are the MD5 hashes I ended up with:
+   <ul>
+      <li>Original ISO: <span class="codeFragment">5ed76b04eac58b0e459bed06108eed74</span></li>
+      <li>Patched ISO v0.9: <span class="codeFragment">e633145a71669601aac23407df77fec0</span></li>
+   </ul><br>
+   If you don't have the same hashes before and/or after, then it most likely won't work for you.<br><br>
+   <font class="smallerFont">***Oh come on, where do you expect me to buy a game that is <a href="/0_SGPSPE/look_there_is_nothing_i_could_possibly_do.png" target="_blank">not being sold anymore</a>?</font>
+   </p>
+
+   <hr>
+   <p class="bold">🔨 Patching options</p>
+   <b>.exe</b> (recommended), created with <a href="https://www.tibed.net/vpatch/" target="_blank">VPatch</a>.
+   <ol>
+      <li>Run Windows command prompt.</li>
+      <li>Navigate using <span class="codeFragment">cd</span> to the folder with the <span class="codeFragment">Steins_Gate_PSP_English_Patch_vX.X.exe</span> inside it.</li>
+      <li>Run <span class="codeFragment">Steins_Gate_PSP_English_Patch_vX.X.exe &lt;path_to_original_file&gt; &lt;patched_game.iso&gt;</span>.</li>
+      <li>The program will immediately throw you back into the command prompt. This is normal, it does all the work in the background. You can monitor its progress via Task Manager. Once it is done patching, the process will automatically terminate, leaving you with the ~1.2GB <span class="codeFragment">&lt;patched_game.iso&gt;</span> file.</li>
+   </ol>
+   <br>
+   <b>.xdelta</b> (will be dropped in the future, since it has unbelievably large patch file size).
+   <ol>
+      <li>Get and run <a href="https://www.romhacking.net/utilities/704/" target="_blank">Delta Patcher</a>.</li>
+      <li>Select the original ISO and the <span class="codeFragment">Steins_Gate_PSP_English_Patch_vX.X.xdelta</span> file.</li>
+      <li>Apply the patch.</li>
+   </ol>
+   </p>
+
+   <hr>
+   <p class="bold">❌ Bugs/Typos/Crashes</p>
+   <p>There are plenty of each. That is exactly why there will be future patches with small bugfixes. You can contact me by using the means explained in the "<a href="/#contact" target="_blank">Contact</a>" section. Or, specifically for this patch, the other way is to make a <a href="https://github.com/HaselLoyance/steins-gate-psp-patch/issues" target="_blank">new issue</a>.<br><br>I kindly ask you to provide the conditions in which unexpected behavior occurs. Screenshots and references to story text are very welcome. Save data would be even better.
+   </p>
+
+   <hr>
+   <p class="bold">👀 People that made this work</p>
+   <p>
+   (In the order of their involvement in the project)
+   <a href="" target="_blank"></a>
+   <ul>
+      <li>The original toolchain and information: <a href="https://github.com/BASLQC/steins-gate-psp-patch" target="_blank">GitHub</a> and <a href="https://en.wikibooks.org/wiki/PSP/Steins_Gate_Translation" target="_blank">BASLQC Wiki</a>.</li>
+      <li>Riku, the first person to make a proof of concept and to develop a way to inject variable-length strings into the game. Consequently, the author of the above-mentioned toolchain. Their <a href="https://gbatemp.net/members/riku.176570/" target="_blank">GBAtemp</a> profile and a <a href="https://gbatemp.net/threads/steins-gate-anyone-familiar-with-this-game-engine.346275/page-2#post-5065600" target="_blank">thread with related posts</a>.</li>
+      <li>Nysek, motivated me to continue work on my translation once I got the <span class="codeFragment">.BIN</span> files decompiled/decompressed/extracted into Atlas scripts. Their <a href="https://github.com/Nysek/" target="_blank">GitHub</a> profile.</li>
+      <li>HoaiTrung97, more motivation for me straight from Japan. Shouted out this translation in one of their own projects. Their <a href="https://gbatemp.net/members/hoaitrung97.461220/" target="_blank">GBAtemp</a> profile.</li>
+      <li>ant08, the source of the English translation. Unfortunately, I did not use their latest available version, since the links to all of them are dead. But hey, it still turned out very good. The <a href="http://tsuuun.blogspot.com/2012/01/happy-new-year-everyone-and-yeah-its.html" target="_blank">translation files</a> I used and their <a href="http://tsuuun.blogspot.com/" target="_blank">blog</a>.</li>
+      <li>CommitteeOfZero, the source of the translated backgrounds, as well as translated/karaoke cutscenes. They have a thing on their <a href="https://github.com/CommitteeOfZero" target="_blank">GitHub</a> called <a href="https://github.com/CommitteeOfZero/sghd-patch" target="_blank">sghd-patch</a>, which is an improvement over the stock Steam translation of the PC version. Check out their <a href="http://sonome.dareno.me/" target="_blank">website</a> for more S;G-related projects.</li>
+      <li>theryusui, was of a huge help to me with the <span class="codeFragment">.KLZ</span> compression/decompression. Practically they dug up their 5 year old version of the only decompressor in the entire world. Their <a href="https://theryusui.tumblr.com/" target="_blank">Tumblr</a> and <a href="https://www.romhacking.net/forum/index.php?action=profile;u=181" target="_blank">Romhacking</a> profile.</li>
+   </ul>
+   </p>
+
+   <hr>
+   <p class="bold">🎥 Video of how this patch was made</p>
+   <p>Coming at some point in the near future<!--<a target="_blank" href="https://www.youtube.com/watch?v=2GnB7wELpUc">Link</a>-->
+   </p>
+
+   <!--<hr>
+   <p class="bold">Testers 💭</p>
+   <p>
+   <ul>
+      <li>empty</li>
+   </ul>
+   </p>-->
+   <hr>
+   <p class="bold">🖼 Screenshots</p>
+   <div class="gallery"><a href="/0_SGPSPE/logo.jpg" target="_blank"><img src="/0_SGPSPE/logo.jpg"></a><a href="/0_SGPSPE/pic1.jpg" target="_blank"><img src="/0_SGPSPE/pic1.jpg"></a><a href="/0_SGPSPE/pic2.jpg" target="_blank"><img src="/0_SGPSPE/pic2.jpg"></a><a href="/0_SGPSPE/pic3.jpg" target="_blank"><img src="/0_SGPSPE/pic3.jpg"></a><a href="/0_SGPSPE/pic4.jpg" target="_blank"><img src="/0_SGPSPE/pic4.jpg"></a><a href="/0_SGPSPE/pic5.jpg" target="_blank"><img src="/0_SGPSPE/pic5.jpg"></a><a href="/0_SGPSPE/pic6.jpg" target="_blank"><img src="/0_SGPSPE/pic6.jpg"></a></div>
+
+   <br>
+   <hr>
+   <p class="bold">⏬ Download</p>
+   <div class="downloadLinks">
+      <a href="https://github.com/HaselLoyance/steins-gate-psp-patch/releases" target="_blank" style="color:inherit;"><div class="btn">Releases</div></a>
+      <a href="https://github.com/HaselLoyance/steins-gate-psp-patch" target="_blank" style="color:inherit;"><div class="btn">Partial Sources</div></a>
+   </div>
+
+   <br>
+   <hr>
+   <p class="bold">☕ Maybe sponsor my coffee addiction?</p>
+   <p>If you find my work interesting, then please feel free to sponsor my <a href="https://buymeacoff.ee/rwly8PutT" target="_blank">coffee addiction</a> that is currently covered entirely by my ever-growing student loans.
+   </p>
+
+</div>
