@@ -10,7 +10,7 @@
    <p><i>I am not going to lie, this worldline is decent enough. But this patch is going to make it better. El Psy Congroo.</i><br><br>Steins;Gate was released for PSP in 2011. This version of the game did not get much attention in the West, since it was available only in Japanese. Until now. I present you the Steins;Gate PSP English Patch. Combined from bits and pieces of other translations for other platforms, it brings the English Steins;Gate experience to the PSP.</p>
 
    <hr>
-   <p class="bold">✔️ Current version (v0.9)</p>
+   <p class="bold">✔️ Current version (v1.0.0)</p>
    <p>
    <ul>
       <li>Translated story scripts</li>
@@ -18,25 +18,27 @@
       <li>Translated phonebook</li>
       <li>Translated phone messages/emails, backgrounds and songs</li>
       <li>Translated backgrounds</li>
-      <li>Translated cutscenes*</li>
-      *This doesn't apply to <span class="codeFragment">OPEN3.PMF</span>, since there is no available replacement from the PC version of the game.
+      <li>Translated cutscenes</li>
+      <li>Translated phone UI</li>
+      <li>Translated UI elements across all menus</li>
+      <li>Translated contents of all menus (Settings, Clear screen, Load, Save, etc)</li>
+      <li>Translated system messages</li>
+      <li>Translated PSP HOME menu</li>
+      <li>X and O buttons were switched to resemble traditional Western control scheme on PSP</li>
    </ul>
-   <br>(pretend that each item on the list has "(where applicable)" after it)
    </p>
 
    <hr>
-   <p class="bold">🚩 Roadmap</p>
+   <p class="bold">📝 Bugfixes and smaller changes</p>
    <p>
    <ul>
       <b>v1.0.0:</b>
-      <li>Translate UI elements</li>
-      <li>Translate phone menus</li>
-      <li>Change PSPMENU button UI language</li>
-      <li>Fix bugs and inconsistencies</li>
-      <li>Find a way to translate menu textures (Clear list, Movie/CG gallery, etc)</li>
-      <br>
-      <b>v1.0.x:</b>
-      <li>Fix bugs and inconsistencies</li>
+      <li>Replaced ICON0 and PIC1</li>
+      <li>Dropped support of xDelta</li>
+      <li>Added a logo with credits</li>
+      <li>Fixed visual glitches in Tips</li>
+      <li>Fixed some typos and inconsistencies in game scripts</li>
+      <li>Fixed text overflow</li>
    </ul>
    </p>
 
@@ -45,7 +47,7 @@
    <p>I <i>honestly and legally purchased***</i> the copy of the Steins;Gate from Cdromance. Here are the MD5 hashes I ended up with:
    <ul>
       <li>Original ISO: <span class="codeFragment">5ed76b04eac58b0e459bed06108eed74</span></li>
-      <li>Patched ISO v0.9: <span class="codeFragment">e633145a71669601aac23407df77fec0</span></li>
+      <li>Patched ISO v1.0.0: <span class="codeFragment">482be2ba9ae33f04f5c1d4c7bf693318</span></li>
    </ul><br>
    If you don't have the same hashes before and/or after, then it most likely won't work for you.<br><br>
    <font class="smallerFont">***Oh come on, where do you expect me to buy a game that is <a href="/0_SGPSPE/look_there_is_nothing_i_could_possibly_do.png" target="_blank">not being sold anymore</a>?</font>
@@ -53,25 +55,18 @@
 
    <hr>
    <p class="bold">🔨 Patching options</p>
-   <b>.exe</b> (recommended), created with <a href="https://www.tibed.net/vpatch/" target="_blank">VPatch</a>.
+   <b>.exe</b> created with <a href="https://www.tibed.net/vpatch/" target="_blank">VPatch</a>.
    <ol>
       <li>Run Windows command prompt.</li>
-      <li>Navigate using <span class="codeFragment">cd</span> to the folder with the <span class="codeFragment">Steins_Gate_PSP_English_Patch_vX.X.exe</span> inside it.</li>
-      <li>Run <span class="codeFragment">Steins_Gate_PSP_English_Patch_vX.X.exe &lt;path_to_original_file&gt; &lt;patched_game.iso&gt;</span>.</li>
-      <li>The program will immediately throw you back into the command prompt. This is normal, it does all the work in the background. You can monitor its progress via Task Manager. Once it is done patching, the process will automatically terminate, leaving you with the ~1.2GB <span class="codeFragment">&lt;patched_game.iso&gt;</span> file.</li>
-   </ol>
-   <br>
-   <b>.xdelta</b> (will be dropped in the future, since it has unbelievably large patch file size).
-   <ol>
-      <li>Get and run <a href="https://www.romhacking.net/utilities/704/" target="_blank">Delta Patcher</a>.</li>
-      <li>Select the original ISO and the <span class="codeFragment">Steins_Gate_PSP_English_Patch_vX.X.xdelta</span> file.</li>
-      <li>Apply the patch.</li>
+      <li>Navigate using <span class="codeFragment">cd</span> to the folder with the <span class="codeFragment">Steins_Gate_PSP_English_Patch_vXXX.exe</span> inside it.</li>
+      <li>Run <span class="codeFragment">Steins_Gate_PSP_English_Patch_vXXX.exe &lt;original_iso&gt; &lt;patched_iso&gt;</span>.</li>
+      <li>The program will immediately throw you back into the command prompt. This is normal, it does all the work in the background. You can monitor its progress via Task Manager. Once it is done patching, the process will automatically terminate, leaving you with the ~1.2GB <span class="codeFragment">&lt;patched_iso&gt;</span> file.</li>
    </ol>
    </p>
 
    <hr>
-   <p class="bold">❌ Bugs/Typos/Crashes</p>
-   <p>There are plenty of each. That is exactly why there will be future patches with small bugfixes. You can contact me by using the means explained in the "<a href="/#contact" target="_blank">Contact</a>" section. Or, specifically for this patch, the other way is to make a <a href="https://github.com/HaselLoyance/steins-gate-psp-patch/issues" target="_blank">new issue</a>.<br><br>I kindly ask you to provide the conditions in which unexpected behavior occurs. Screenshots and references to story text are very welcome. Save data would be even better.
+   <p class="bold">❌ Bugs/Typos</p>
+   <p>There are plenty of each. That is exactly why there will be future patches with small bugfixes. You can contact me by using the means explained in the "<a href="/#contact" target="_blank">Contact</a>" section. Or, specifically for this patch, the other way is to make a <a href="https://github.com/HaselLoyance/steins-gate-psp-patch/issues" target="_blank">new issue</a>.<br><br>I kindly ask you to provide the conditions in which unexpected behavior occurs. Screenshots and references to story text are very welcome. Save data would be even better.<br><br>It's for the best if you report even the smallest things. Typos/text overflow/bugs, I try to pay attention to every detail, but it's hard to do so with this massive project.
    </p>
 
    <hr>
@@ -87,6 +82,7 @@
       <li>ant08, the source of the English translation. Unfortunately, I did not use their latest available version, since the links to all of them are dead. But hey, it still turned out very good. The <a href="http://tsuuun.blogspot.com/2012/01/happy-new-year-everyone-and-yeah-its.html" target="_blank">translation files</a> I used and their <a href="http://tsuuun.blogspot.com/" target="_blank">blog</a>.</li>
       <li>CommitteeOfZero, the source of the translated backgrounds, as well as translated/karaoke cutscenes. They have a thing on their <a href="https://github.com/CommitteeOfZero" target="_blank">GitHub</a> called <a href="https://github.com/CommitteeOfZero/sghd-patch" target="_blank">sghd-patch</a>, which is an improvement over the stock Steam translation of the PC version. Check out their <a href="http://sonome.dareno.me/" target="_blank">website</a> for more S;G-related projects.</li>
       <li>theryusui, was of a huge help to me with the <span class="codeFragment">.KLZ</span> compression/decompression. Practically they dug up their 5 year old version of the only decompressor in the entire world. Their <a href="https://theryusui.tumblr.com/" target="_blank">Tumblr</a> and <a href="https://www.romhacking.net/forum/index.php?action=profile;u=181" target="_blank">Romhacking</a> profile.</li>
+      <li>ilubandroid, provided sick ICON0 and PIC1. They literally look better than the ones in the original game. Their <a href="https://www.reddit.com/user/ilubandroid" target="_blank">Reddit</a>.
    </ul>
    </p>
 
@@ -104,7 +100,8 @@
    </p>-->
    <hr>
    <p class="bold">🖼 Screenshots</p>
-   <div class="gallery"><a href="/0_SGPSPE/logo.jpg" target="_blank"><img src="/0_SGPSPE/logo.jpg"></a><a href="/0_SGPSPE/pic1.jpg" target="_blank"><img src="/0_SGPSPE/pic1.jpg"></a><a href="/0_SGPSPE/pic2.jpg" target="_blank"><img src="/0_SGPSPE/pic2.jpg"></a><a href="/0_SGPSPE/pic3.jpg" target="_blank"><img src="/0_SGPSPE/pic3.jpg"></a><a href="/0_SGPSPE/pic4.jpg" target="_blank"><img src="/0_SGPSPE/pic4.jpg"></a><a href="/0_SGPSPE/pic5.jpg" target="_blank"><img src="/0_SGPSPE/pic5.jpg"></a><a href="/0_SGPSPE/pic6.jpg" target="_blank"><img src="/0_SGPSPE/pic6.jpg"></a></div>
+   <div class="gallery"><a href="/0_SGPSPE/logo.jpg" target="_blank"><img src="/0_SGPSPE/logo.jpg"></a><a href="/0_SGPSPE/pic1.jpg" target="_blank"><img src="/0_SGPSPE/pic1.jpg"></a><a href="/0_SGPSPE/pic2.jpg" target="_blank"><img src="/0_SGPSPE/pic2.jpg"></a><a href="/0_SGPSPE/pic3.jpg" target="_blank"><img src="/0_SGPSPE/pic3.jpg"></a><a href="/0_SGPSPE/pic4.jpg" target="_blank"><img src="/0_SGPSPE/pic4.jpg"></a><a href="/0_SGPSPE/pic5.jpg" target="_blank"><img src="/0_SGPSPE/pic5.jpg"></a><a href="/0_SGPSPE/pic6.jpg" target="_blank"><img src="/0_SGPSPE/pic6.jpg"></a><a href="/0_SGPSPE/pic7.jpg" target="_blank"><img src="/0_SGPSPE/pic7.jpg"></a><a href="/0_SGPSPE/pic8.jpg" target="_blank"><img src="/0_SGPSPE/pic8.jpg"></a>
+   </div>
 
    <br>
    <hr>
@@ -117,7 +114,7 @@
    <br>
    <hr>
    <p class="bold">☕ Maybe sponsor my coffee addiction?</p>
-   <p>If you find my work interesting, then please feel free to sponsor my <a href="https://buymeacoff.ee/rwly8PutT" target="_blank">coffee addiction</a> that is currently covered entirely by my ever-growing student loans.
+   <p>If you find my work interesting, then please feel free to sponsor my <a href="https://buymeacoff.ee/rwly8PutT" target="_blank">coffee</a> and <a href="https://www.ko-fi.com/haselloyance" target="_blank">ko-fi</a> addictions that are currently covered entirely by my ever-growing student loans.
    </p>
 
 </div>
