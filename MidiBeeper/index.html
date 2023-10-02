@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Midi Beeper - yar.sh</title>
+</head>
+
+<body>
+    <a class="back" href="/">Home</a>
+    <header>
+    <h1>Midi Beeper</h1>
+    <iframe height="480" src="https://www.youtube-nocookie.com/embed/HpuKP2fFph4?si=2HrdpvYTuNTSaoQQ" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+    <p>This is a small Windows program, that allows you to play any *.midi file via Windows <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms679277(v=vs.85).aspx" target="_blank">Beep()</a> function.</p>
+    <p>Let me be completely honest with you: usual Beep function works in a blocking way (code will not continue executing until the sound stops playing), so there was no way I would be able to make it work (even with async/thread calls).</p>
+    <p>I had to cheat a little bit. I recorded ten second samples of every <a href="http://www.phy.mtu.edu/~suits/notefreqs.html" target="_blank">note frequency</a> and saved those samples as *.wav files. This made it possible to play the sound in a non-blocking way through <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd757161(v=vs.85).aspx" target="_blank">mciSendString</a>.</p>
+    </header>
+   
+    <section>
+    <h2>📝 instructions</h2>
+    <p>Simply navigate to the folder with MidiBeeper.exe with Command Prompt, run it, and then follow instructions on the screen.</p>
+    </section>
+
+    <section>
+    <h2>⏬ downloads</h2>
+    <ul>
+        <li><a href="https://github.com/yar-sh/MidiBeeper/releases" target="_blank">Release</a></li>
+	<li><a href="https://github.com/yar-sh/MidiBeeper" target="_blank">Source</a></li>
+    </ul>
+    </section>
+
+    <hr>
+
+    <footer>
+	<section>
+        <ul class="wide">
+            <li><a href="https://discordapp.com/users/548599191836819480">Discord</a></li>
+            <li><a href="https://t.me/hs_ray">Telegram</a></li>
+            <li><a href="mailto:i@yar.sh">E-mail</a></li>
+            <li><a href="https://github.com/yar-sh">GitHub</a></li>
+	    <li><a href="https://www.youtube.com/@yar_sh">YouTube</a></li>
+	    <li><a href="https://www.linkedin.com/in/yaroslav-mikhaylik/">LinkedIn</a></li>
+        </ul>
+	</section>
+    </footer>
+</body>
+</html>

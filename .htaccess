@@ -1,5 +1,0 @@
-ErrorDocument 404 /404.html
-<Directory />
-	Allow from all
-	Require all granted
-</Directory>
